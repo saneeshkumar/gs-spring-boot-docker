@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "wingtiptoysakscluster"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "wingtiptoysakscluster"
+    spec:
+      containers:
+        - name: "wingtiptoysakscluster"
+          image: "mljmsacr.azurecr.io/wingtiptoysakscluster"
+          ports:
+          - containerPort: 8080
